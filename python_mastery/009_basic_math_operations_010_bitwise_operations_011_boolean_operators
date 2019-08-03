@@ -1,0 +1,52 @@
+* Division
+a / b   # performs ture division regardless of type
+a // b  # performed floored (rounded down division, maintaining type)
+ex) 10 // 3 = 3
+a % b   # a mod b
+ex) 10 % 3 = 1
+So, given a and b, we always have (a // b) * b + (10 % 3) = a
+
+and here are all the in-places for good measure
++=
+-=
+*=
+/=
+//=
+%=
+**=
+
+floored_division_result, remainder = divmod(a, b)
+
+* Bitwise operators
+twos complement representation of numbers stored in bytes and can be [-128, 127]:
+bytes        twos comp number
+0000 0000    0
+1111 1111    -1
+1111 1110    -2
+1000 0000    -128
+0111 1111    127
+
+Bitwise NOT (~) will flip all the bits in a number
+~n = -n -1
+
+Bitwise XOR (^) will have a 1 at the position if the bits are different
+Bitwise OR (|) will have a 1 at the position if there is at least a single 1 in that position for the arguments
+
+Bitwise AND (&) bit is copied only if it exists at the position in both arguments
+
+Bitwise shifts
+byte << [places to shift]
+2 << 2
+8 >> 2
+
+<< 1 is multiplication by 2
+>> 1 is division by 2
+
+and, or and not are boolean expressions
+
+
+
+
+
+
+

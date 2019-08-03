@@ -31,4 +31,3 @@ func(object.__doc__) will work for modules, functions and object with docstrings
 Sphinx is a tool used to generate HTML based documentation for python projects based on the docstrings.
 But, the Google Python Style guide is more human readable: https://google.github.io/styleguide/pyguide.html
 Using the Napolean plug-in Sphinx can parse the Google Style Guide format
-
