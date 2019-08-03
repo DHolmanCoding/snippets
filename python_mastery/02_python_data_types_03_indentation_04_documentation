@@ -1,0 +1,34 @@
+Data types are variables you use to reserve space in memory
+
+frozenset() is an immutable version of a set()
+
+numeric types: int, float, complex (3 + 2j) , and long (3000L)
+
+* How indentation is parsed in python
+Whitespace is handled by the lexical analyzer (lexer) before parsing.
+The lexer does this using a stack, that begins with just the value 0.
+An new indentation level is pushed to the stack when whitespace is encountered,
+and an indent token is inserted into the token stream which is passed to the parser.
+
+example:
+if foo:
+ if bar:
+ x = 42
+else:
+ print foo
+
+is analyzed as:
+<if> <foo> <:> [0]
+<INDENT> <if> <bar> <:> [0, 4]
+<INDENT> <x> <=> <42> [0, 4, 8]
+<DEDENT> <DEDENT> <else> <:> [0]
+<INDENT> <print> <foo> [0, 2]
+<DEDENT>
+
+* Programmatically acessing docstrings
+func(object.__doc__) will work for modules, functions and object with docstrings.
+
+Sphinx is a tool used to generate HTML based documentation for python projects based on the docstrings.
+But, the Google Python Style guide is more human readable: https://google.github.io/styleguide/pyguide.html
+Using the Napolean plug-in Sphinx can parse the Google Style Guide format
+
