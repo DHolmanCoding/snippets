@@ -1,0 +1,99 @@
+* Python variable assignment:
+name = object
+
+multiple assignments:
+a, b, c = 1, 2, 3
+a, b = (1, 2)
+
+a = b = c = 1 # All names point to the same object in memory
+
+* Datatypes:
+bool: is a subclass of int with only True and False instances
+True < bool < int
+False < bool < int
+
+int: arbitrarily sized ints
+
+float: C doubles
+
+complex = 1 + 10j
+
+str: by default, strings are unicode, but you can also do b'byte_strings' like this,
+     and r'raw_string' like this (ignores all escape characters.
+
+python differentiates between sequences (ordered) and collections (like set and dict)
+
+n-tuple: ordered collection of n values of any type, immutable, hashable if elts are hashable
+
+list: ordered collection of any type, mutable, not hashable
+
+set: An unordered collection of unique values. elts must be hashable
+
+dict: An unordered collection of unique key-value pairs. keys must be hashable
+
+constants in the python namespace:
+- True and False values of build-in bool
+- None singleton
+- NotImplemented
+
+* Lists
+.append(object)
+.insert(index, object)  # shifts everything right
+.remove(object)  # removes first instance of an object
+.index(object)
+.count(object)
+.reverse or list[::-1]
+.pop([index])  # if no argument is passed it removed the last object
+               # this method returns the object that is being popped
+
+* Tuples
+If there is only one element they mut be defined as (object,) or tuple(object)
+
+* Dictionaries
+The json module is the python std library can be used to convert b/t json and dicts
+
+* defaultdict (from collections import defaultdict)
+never raises a KeyError, since it will default to the value passed on initialization
+defaultdict(int)  # int defaults to initializing a key with value 0 and is useful for counting
+
+You can take in user input with input()
+
+* Built-in modules and functions
+A module is a file containing python functions and definitions
+dir() passed without args will pass all the functions in the current scope
+help(function)
+A module is created by making a .py file
+If the module is inside a directory and needs to be detected by python, include an __init__
+
+Python 2.7 installation on Linux:
+wget --no-check-certificate https://www.python.org/ftp/python/2.7.X/Python-2.7.X.tgz
+tar -xzf Python-2.7.X.tgz
+cd Python-2.7.X
+./configure
+make
+sudo make install
+
+Python install on OSX:
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install python
+brew install python3
+
+checking your installs:
+py -2
+py -3
+py -2 -m pip -V
+py -3 -m pip -V
+
+* String functions
+Readable representations of objects can be obtained by:
+    - repr(object) (for eval convertible string eval(repr(object)) is id(object))
+    - str(object) (for human readable string)
+
+* Installing external modules with pip
+pip search [query]
+pip install [package]
+pip install [package]==0.0.0
+pip install [package]>=0.0.0
+pip list outdated
+pip install -U pip
+don't be afraid to use the help([module]) function in the python interpreter
