@@ -39,3 +39,8 @@ If you need to do fuzzy datetime parsing on messy data
 from dateutil.parser import parse
 dt = parse("Today is January 1, 2047 at 8:21:00AM", fuzzy=True)
 
+Parsing a string of static format to a datetime:
+from datetime import datetime
+datetime_string = 'Oct 1 2016, 00:00:00'
+datetime_string_format = '%b %d %Y, %H:%M:%S'
+datetime.strptime(datetime_string, datetime_string_format)
