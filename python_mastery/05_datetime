@@ -1,0 +1,41 @@
+* Timezone aware datetime object
+
+Parsing:
+import datetime
+dt = datetime.datetime.strptime("2016-04-15T08:27:18-0500", "%Y-%m-%dT%H:%M:%S%z")
+this gives you a UTC offset as %z
+
+Constructing:
+from datetime import datetime, timedelta, timezone
+JST = timezone(timedelta(hours=+9))
+dt = datetime(2015, 1, 1, 12, 0, 0, tzinfo=JST)  # 2015-01-01 12:00:00+09:00
+print(dt.tzname())                               # UTC+09:00
+~~~OR~~~
+dt = datetime(2015, 1, 1, 12, 0, 0, tzinfo=timezone(timedelta(hours=9), 'JST'))
+print(dt.tzname)  # 'JST'
+
+Use the pytz or dateutil libraries for timezones with daylight savings
+
+* Core datetime objects: date, time, datetime
+# Date object
+today = datetime.date.today()
+new_year = datetime.date(2017, 01, 01)  # datetime.date(2017, 1, 1)
+# Time object
+noon = datetime.time(12, 0, 0)  # datetime.time(12, 0)
+# Current datetime
+now = datetime.datetime.now()
+# Datetime object
+millenium_turn = datetime.datetime(2000, 1, 1, 0, 0, 0) #datetime.datetime(2000, 1, 1, 0, 0)
+
+time delta objects record the amount of time between two datetime objects
+
+Use dateutils (dateutils is more readable) or the calendar module to handle month differencing:
+import datetime
+import dateutil.relativedelta
+d = datetime.datetime.strptime("2013-03-31", "%Y-%m-%d")
+d2 = d - dateutil.relativedelta.relativedelta(months=1) #datetime.datetime(2013, 2, 28, 0, 0)
+
+If you need to do fuzzy datetime parsing on messy data
+from dateutil.parser import parse
+dt = parse("Today is January 1, 2047 at 8:21:00AM", fuzzy=True)
+
