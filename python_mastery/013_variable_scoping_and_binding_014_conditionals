@@ -1,0 +1,38 @@
+* Nonlocal variables:
+You can use the nonlocal keyword to access the nearest enclosing scope. If the nearest enclosing scope is the global
+scope, however, this will fail.
+
+all variable with name assignments inside a function are considered to have local scope
+
+the global keyword can be used inside a local scope in order to ensure assignments to a name will happen at the
+module's top level for the rest of the scope.
+
+* Local variables:
+If a name is bound inside a function, it is by default accessible only within the function it was declared in.
+
+del object.attribute makes the attribute unavailable by using object__delattr__(attribute)
+del object[elt] calls object.__delitem__(elt)
+del object[a:b] calls object.__delslice__(a, b)
+
+built-in functions locals() and globals() return the whole scopes as dictionaries
+
+Even with nested functions, there is only a local and global scope when acting within a given function
+So, if you have global, f_outer(), and f_inner(), from the perspective of f_inner, variables assigned in f_outer()
+are neither local or global (they are nonlocal)
+
+* Conditional Expression (Ternary operator)
+The ternary operator is used for inline conditional expressions
+x = 6
+'large' if x > 10 else 'medium' if x > 5 else 'small'  # 'medium'
+
+* Truth Values:
+The following are considered falsy:
+- None
+- False
+- numerical values equivalent to 0
+- empty sequences '', "", (), []
+- empty mappings {}
+- user defined types where __bool__ or __len__ return 0 or False
+Everything else is True
+
+
