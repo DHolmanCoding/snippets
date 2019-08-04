@@ -30,4 +30,4 @@ you can also use list comprehensions to count conditions:
 [1 for x in range(1000) where x % 2 == 0 and '9' in str(x)]
 
 Know the difference between list comprehensions with nested loops and nested list comprehensions.
-The latter can do thinkgs like matrix transposition.
+The latter can do things like matrix transposition.

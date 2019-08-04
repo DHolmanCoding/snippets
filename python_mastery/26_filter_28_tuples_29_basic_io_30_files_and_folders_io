@@ -1,0 +1,49 @@
+Filter:
+With filters you apply a function that is a contion to filter elt of an iterable by.
+If the function parameter is None, then the identity function will be applied, effectively
+removing all Nonetype objects.
+
+next(filter(fxn, iterable)) will find the first instance of a iterable meeting your criteria
+
+Tuples:
+unpacking
+_, b, c, _ = ()
+first, *middle, last = ()
+
+I/O:
+fileobj = open(file, ['w', 'a', 'r'])
+content = fileobj.read()
+
+Reading from stdin:
+import sys
+for lin in sys.stdin:
+    print(line)
+
+$ cat myfile | python myprogram.py
+
+Reading a file line-by-line:
+with open(file, mode) as f:
+    for line in f
+
+for more control:
+with open(file, mode) as f:
+    lines = f.readlines()
+
+Iterating files in a directory, including subdirectories:
+import os
+for root, folders, files in os.walk(root_dir):
+    for filename in files:
+        pass
+
+writing to a file inside of a pring statement:
+print(string, file=filename)
+
+Checking to see if a file path exists:
+try:
+    open(path)
+except IOError as e:
+    if e.errno != errno.ENOENT:
+        raise
+
+checking if a file exists and is non-empty:
+os.path.isfile(file_path) and os.path.getsize(file_path) >= 0
