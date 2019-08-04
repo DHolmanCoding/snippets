@@ -35,4 +35,11 @@ The following are considered falsy:
 - user defined types where __bool__ or __len__ return 0 or False
 Everything else is True
 
+* Boolean Logic Expressions:
+and operator: evaluates all expressions and returns the last expression if all expressions evaluate to True,
+              otherwise it will return the first false expression
+or operator: evaluates the expression left ot right and returns the first value that evaluates to True (or the last
+             value if everything is False
 
+ex) testing if an object is None using a short circuit evaluation
+variable=variable or 'assigned_if_variable is None'
