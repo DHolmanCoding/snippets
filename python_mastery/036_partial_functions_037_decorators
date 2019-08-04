@@ -1,0 +1,44 @@
+Partial functions:
+ex)
+from functors import partial
+
+def raise_power(x, y):
+    return x**y
+
+cube_number = partial(raise_power, y=3)
+
+Decorators:
+Decorators augment the behavior of other functions or methods. Any function that takes in a function and returns
+an augments function can be a decorator.
+
+syntax:
+def decorator_function(f):
+    return f
+
+@decorator_function
+def function():
+    pass
+
+function = decorator_function(function)
+def decorator_function(function)()
+
+ex)
+def print_args(func)
+    def inner_func(*args, **kwargs):
+        print(args)
+        print(kwargs)
+        return func(*args, **kwargs)
+    return inner_function
+
+@print_args
+def multiply(num_a, num_b):
+    return num_a * num_b
+
+multiply = print_args(multiply)
+multiply(3, 4)  # This is now pointing to the inner function loaded in with the args and the function!
+
+# prints (3, 5)
+# prints {}
+# returns 15
+
+

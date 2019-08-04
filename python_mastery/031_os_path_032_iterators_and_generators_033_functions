@@ -60,11 +60,3 @@ access to the variables but cannot make assignments to them.
 You can use * to force named (keyword) arguments
 
 def(a, b, *, c)  # c must be keyword
-
-
-
-
-
-
-
-
