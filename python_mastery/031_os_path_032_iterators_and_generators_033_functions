@@ -1,0 +1,70 @@
+join paths:
+os.path.join('a','b','c.txt')  # p = a/b/c.txt
+
+os.path.cwd()
+os.path.dirname(p)                    # a/b
+os.path.basename(p)                   # c.txt
+os.path.split(p)                      # ('a/b', 'c.txt')
+os.path.splitext(os.path.basename(p)) # ('c', '.txt')
+os.path.exists()
+os.path.isdir()
+os.path.isfile()
+os.path.islink()   # checks for symbollic link
+os.path.ismount()  # checks for mount point
+
+Iterables are objects with state that has an __iter__ method and returns an iterator. Alternatively,
+it can lack state and implement a __getitem__ attribute.
+
+An iterator is an object that produced the next value when you call next(object). Any object with a __next__
+method is an iterator. An iterator raises StopIteration after exhausting the iterator.
+
+Iterable classes have a __iter__ and __next__ method.
+
+class MyIterable(collections.Iterator):
+    pass
+
+Functions:
+parameter
+arg1, ... , argN -- regular arguments
+*args            -- unnamed positional arguments
+kw1, ... , kwN   -- Keyword-only arguments
+**kwargs         -- The rest of keyword arguments
+
+A function name from the def statement is known as the identifier of the function. The execution of
+a function definition will bind the function name to the function object.
+
+Defining a function with an arbitrary number of positional arguments:
+def func(*args)
+    pass
+
+and the same for kwargs:
+def func(**kwargs):
+    pass
+
+In a function definition the order must be:
+1. args
+2. *args
+3. kwargs
+4. **kwargs
+
+Lambdas:
+lambda x: x.method()
+is like function(x): return x.method() and returns the value after the function/method is applied.
+
+Closures:
+In a nested function, when the outer function is called, the inner function is instantiated with bindings to the
+specific arguments to the outer function. Finally the outer function returns the inner function with these bindings
+loaded in, effectively parameterizing the inner function. Without using nonlocal, the inner function has read
+access to the variables but cannot make assignments to them.
+
+You can use * to force named (keyword) arguments
+
+def(a, b, *, c)  # c must be keyword
+
+
+
+
+
+
+
+
