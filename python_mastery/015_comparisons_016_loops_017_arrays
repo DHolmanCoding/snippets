@@ -1,0 +1,47 @@
+Comparisons:
+a == b compares the values of a and b
+a is b is short for id(a) == id(b) which is effectively memory location
+
+examples of lexigraphic comparisons:
+'a' < 'b'
+'a' > 'B'  # lowercase letters are greater than upper case
+
+== calls __eq__
+!= calls __ne__
+These comparisions assume objects of the same type. Use isinstance() if interested.
+
+Loops:
+break    ==> loop is exited immediately
+continue ==> skips to the next iteration of a loop
+return   ==> exits a function  # this is the only way to break nested loops
+pass     ==> keeps going
+
+for loops can iterate on any iterable object (meaning it defines a __getitem__ or __item__ function.
+__iter__ returns a next function that is used to access the next elt of an iterable
+
+enumerate allows iteration with an index
+list(map(lambda x: x.upper(), iterable)) lets you iterate over a list with value manipulation
+
+for-else loops have a dangling else clause which executes if the for loop completes iteration
+The main use of this is as a concise implementation of search where else means 'if not break during loop/if not found'
+
+Arrays:
+In python an array stores values as the same data type
+from array import *
+array([typecode], [Initializers])
+
+methods on arrays:
+.append()
+.insert(i, item)
+.extend(array)
+.fromlist(list)  # basically extend for lists
+.remove(item)
+.pop()
+.index()
+.buffer_info()
+.count(item)
+.tostring()
+.tolist()
+.fromstring()  # has to be a char array
+
+Multi-dimensional arrays are best implemented as nested lists
