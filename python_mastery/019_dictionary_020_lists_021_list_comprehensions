@@ -1,0 +1,33 @@
+Dictionaries:
+d = {**otherdict}                    # makes a shallow copy of otherdict
+d = {**otherdict, **yetanotherdict}  # makes a shallow copy of otherdict and adds items from yetanotherdict
+
+dict comprehension:
+{k, v for k, v in [(k1, v1,)(k2, v2,)(k3, v3,)]}
+
+dict constructor:
+dict(a=1, b=2, c=3)
+
+avoiding KeyError exceptions:
+default = mydict.get(key, default_value_if_key_doesnt_exist)
+
+Lists:
+zip(list1, list2) returns a list of tuples where the i-th tuple has the ith element from each lists
+if the lists are unequal length, zip will only work up until the end of the shorter list.
+To pad the length of unequal lists, you can use itertools.zip_longest
+
+Initializing a list to a fixed number of elements
+list = [None] * n (for immutable elements)
+
+* Generator expressions:
+(x**2 for x in range(10)) will use __next__ to get the items out in order, but cannot be indexed
+
+refactor your maps and filters:
+map(F, S) == [F(x) for x in S]
+filter(P, S) == [x for x in S if P(x)]
+
+you can also use list comprehensions to count conditions:
+[1 for x in range(1000) where x % 2 == 0 and '9' in str(x)]
+
+Know the difference between list comprehensions with nested loops and nested list comprehensions.
+The latter can do thinkgs like matrix transposition.
