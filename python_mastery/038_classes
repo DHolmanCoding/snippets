@@ -1,0 +1,67 @@
+The anatomy of a class:
+class Person(object):
+    """A simple class.""" # docstring
+    species = "Homo Sapiens" # class attribute
+
+    def __init__(self, name): # special method
+        """This is the initializer. It's a special
+        method (see below).
+        """
+
+    self.name = name # instance attribute
+
+    def __str__(self): # special method
+        """This method is run when Python tries
+        to cast the object to a string. Return
+        this string when using print(), etc.
+        """
+        return self.name
+
+    def rename(self, renamed): # regular method
+        """Reassign and print the name attribute."""
+        self.name = renamed
+        print("Now my name is {}".format(self.name))
+
+The __init__() method is equivalent to the constructor in other languages and is run when the class is instantiated.
+
+Method within a class are simply functions, for example Class.method is just a function.
+However, instance.method is known as a bound method.
+In detail,
+instance.method creates a method object where method.__func__ references Class.method
+and method.__self__ references the instance.
+
+Special types of methods include class methods and static methods. Class methods are
+similar to standard methods except method.__self__ = type(instance) and not the instance
+itself.
+
+Static methods don't bind anything at all. They are basically just functions.
+
+With inheritance, we can create subclasses which give us the opportunity to use
+things like super().__parent_method__() to access methods from the parent class.
+Derived classes can also access and modify attributes of its base classes.
+
+issubclass(class, BaseClass)
+isinstance(object, Class)
+
+We can also perform monkey patching, for example to add a new method to class after definition:
+def patched(self):
+    pass
+
+class.method = patched  # this makes the new method available to all existing and future instances
+                        # of the class
+
+Class methods can serve as secondary initializers for a class, effectively branching
+or wrapping the main initializer.
+
+Setters, deleters and getters (read only attributes) are very useful property decorators.
+
+The dir() method can be used to get a list of the members of a class (its methods and dunders).
+If you just want the non-dunders:
+[m for m in dir(list) if not m.startswith('__')]
+
+
+
+
+
+
+
