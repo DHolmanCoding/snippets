@@ -1,0 +1,20 @@
+Basic import syntax:
+from module import first a f, second, third as t
+
+Importing modules from your filesystem:
+import sys
+sys.path.append('/path/to/directory_containing_your_module')
+import mymodule
+
+PEP conventions for import formatting
+1. std library imports
+2. third party library imports
+3. local imports
+
+Packages:
+- directory
+|-- __init__.py  # this makes the directory a package!
+|-- file1.py     # I believe this is considiered a module
+|-- file2.py
+
+When you import a module, the init script will be run

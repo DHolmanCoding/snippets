@@ -1,0 +1,9 @@
+If a file has a __name__ of 'main', it was not imported but ran directly
+
+In order to log with the name of the file you are working in:
+logger = logging.getLogger(__name__)
+
+Every distribution package requires a setup.py file which describes the packages
+
+
+
