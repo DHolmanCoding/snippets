@@ -41,4 +41,66 @@ multiply(3, 4)  # This is now pointing to the inner function loaded in with the 
 # prints {}
 # returns 15
 
+What if the decorator is a class?
+The syntax will work the same, so long as the decorator class has a __call__ method.
 
+function = decorator_class.__call__(function)
+
+In order to decorate methods, you will need an additional __get__ method. Frankly, this gets quite confusing.
+
+An speaking of confusing, here is the decorator factory construction in functional and class form:
+def decoratorfactory(message):
+    def decorator(func):
+        def wrapped_func(*args, **kwargs):
+            print('The decorator wants to tell you: {}'.format(message))
+            return func(*args, **kwargs)
+        return wrapped_func
+    return decorator
+
+@decoratorfactory('Hello World')
+def test():
+    pass
+test()
+
+def decoratorfactory(*decorator_args, **decorator_kwargs):
+
+class Decorator(object):
+    def __init__(self, func):
+        self.func = func
+    def __call__(self, *args, **kwargs):
+        print('Inside the decorator with arguments {}'.format(decorator_args))
+        return self.func(*args, **kwargs)
+
+    return Decorator
+@decoratorfactory(10)
+def test():
+    pass
+
+Additionally, you can use 'from functools import wraps' in order to make the wrapped function have the same
+name and docstring as the original function.
+
+Example of using a decorator to time a function:
+import time
+def timer(func):
+    def inner(*args, **kwargs):
+        t1 = time.time()
+        f = func(*args, **kwargs)
+        t2 = time.time()
+        print 'Runtime took {0} seconds'.format(t2-t1)
+        return f
+    return inner
+
+@timer
+def example_function():
+   example_function()
+
+Interestingly, in class decorators, all instances of the class being decorated will share the same decorator
+
+The canonical example of this is for singletons:
+def singleton(cls):
+    instance = [None]
+    def wrapper(*args, **kwargs):
+        if instance[0] is None:
+        instance[0] = cls(*args, **kwargs)
+        return instance[0]
+    return wrapper
