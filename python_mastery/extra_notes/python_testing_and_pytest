@@ -19,6 +19,7 @@ The general flow for a test body is:
 Setup, perform an action, and assert  # Arrange, Act, Assert
 
 # Automating tests with pytest
+# https://www.youtube.com/watch?v=8mp_1Jt-xHQ
 
 sudo pip install -U pytest-xdist  # for parallelizing tests
 pytest -n auto  # will spin up as many processes as you can for tests
@@ -28,9 +29,21 @@ Fixtures are functions that pytest calls for you and can do useful work,
 or return useful objects before your test runs.
 
 Fixtures have three scopes:
-- test  # this is the default I beleive
+- function  # this is the default I beleive
 - modules
 - session
+
+Example:
+@pytest.fixture
+    def useful_object():
+        pass
+
+def test_example(fixture_fxn_name):
+    pass
+
+# Lisa Roach - Demystifying the Patch Function - PyCon 2018
+
+
 
 
 
