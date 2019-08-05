@@ -60,5 +60,7 @@ Note: The patch target must be importable from your test file
 
 Patch where the object is USED not where it is DEFINED (my_module.db_write)
 
-
-
+How you want to call the patch function depends on your scope:
+- context managers have a minimal scope and mocks won't live outside their lifespan
+- fxn decorators allow mocks to exist for the entire life of a test
+- class decorators will let a mock apply to every function in a class
