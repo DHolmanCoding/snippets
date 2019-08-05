@@ -42,8 +42,23 @@ def test_example(fixture_fxn_name):
     pass
 
 # Lisa Roach - Demystifying the Patch Function - PyCon 2018
+Mocks are a unittest library and are used to replace an object with another object.
+Patch is exactly this, and temporarily replaces your object with a magic mock.
 
+Target: package.module.ClassName
 
+You should mock when you don't want to call an object:
+Such as:
+- sys calls
+- database writes
+or when you want to avoid testing multiple coupled functions in a single test
+
+When a function gets patched out, the memory address for the function that got
+patched out is re-routed to a MagicMock() object.
+
+Note: The patch target must be importable from your test file
+
+Patch where the object is USED not where it is DEFINED (my_module.db_write)
 
 
 
