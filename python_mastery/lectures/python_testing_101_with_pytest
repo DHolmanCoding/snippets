@@ -12,4 +12,3 @@ you can use a magic overloaded assert
 oh, and by the way, here is how to set up a venv:
 python3 -m  venv venv
 source venv/bin/activate
-

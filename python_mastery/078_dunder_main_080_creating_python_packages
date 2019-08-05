@@ -5,5 +5,39 @@ logger = logging.getLogger(__name__)
 
 Every distribution package requires a setup.py file which describes the packages
 
+Standard template:
+from setuptools import setup
+setup(
+    name='package_name', # package name
+    version='0.1', # version
+    description='Package Description', # short description
+    url='http://example.com', # package URL
+    install_requires=[], # list of packages this package depends
+                         # on.
+    packages=['package_name'], # List of module names that installing
+                               # this package will provide.
+)
 
+Uploading a package to PyPI
 
+# .pypirc file
+[distutils]
+index-servers =
+ pypi
+ pypitest
+
+[pypi]
+repository=https://pypi.python.org/pypi
+username=your_username
+password=your_password
+
+[pypitest]
+repository=https://testpypi.python.org/pypi
+username=your_username
+password=your_password
+
+# you can see the manual for more details on getting twine and doing the uplaod
+
+If you want your package to be executable, you can add a __main file to the
+package_name directory:
+python -m package_name
