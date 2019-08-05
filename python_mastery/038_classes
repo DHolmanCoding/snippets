@@ -58,10 +58,3 @@ Setters, deleters and getters (read only attributes) are very useful property de
 The dir() method can be used to get a list of the members of a class (its methods and dunders).
 If you just want the non-dunders:
 [m for m in dir(list) if not m.startswith('__')]
-
-
-
-
-
-
-
