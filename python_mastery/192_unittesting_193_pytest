@@ -1,0 +1,63 @@
+Here is the template for a test with SetUp and TearDown:
+import unittest
+class SomeTest(unittest.TestCase):
+    def setUp(self):
+        super(SomeTest, self).setUp()
+        self.mock_data = [1,2,3,4,5]
+
+    def test(self):
+        self.assertEqual(len(self.mock_data), 5)
+
+    def tearDown(self):
+        super(SomeTest, self).tearDown()
+        self.mock_data = []
+
+if __name__ == '__main__':
+    unittest.main()
+
+Asserting on exceptions:
+
+def test_using_context_manager(self):
+    with self.assertRaises(ZeroDivisionError) as ex:
+        x = division_function(1, 0)
+        self.assertEqual(ex.message, 'integer division or modulo by zero')
+OR
+
+class MyTestCase(unittest.TestCase):
+    def test_passing_function(self):
+        self.assertRaises(ZeroDivisionError, division_function, 1, 0)
+
+Mocking functions with unittest.mock.create_autospec:
+from unittest.mock import create_autospec
+import unittest
+# we import the entire module so we can mock out multiply
+import custom_math
+
+custom_math.multiply = create_autospec(custom_math.multiply)
+from process_math import multiples_of
+    class TestCustomMath(unittest.TestCase):
+        def test_multiples_of(self):
+            multiples = multiples_of(3, num_multiples=1)
+            custom_math.multiply.assert_called_with(3, 1)
+
+
+def test_multiples_of_with_bad_inputs(self):
+    with self.assertRaises(TypeError) as e:
+        multiples_of(1, "extra arg", num_multiples=1) # this should raise a TypeError
+
+Pytest:
+Fixtures should be named with nouns!
+
+Yield fixtures allow easy and idiomatic use of finializers for TearDown:
+
+@pytest.yield_fixture
+def prepped_stuff(): # it doesn't need request now!
+    # do setup
+    my_stuff = stuff.Stuff()
+    my_stuff.prep()
+    # setup is done, pass control to the test functions
+    yield my_stuff
+    # do cleanup
+    my_stuff.finish()
+
+More about PyTest fixtures: http://doc.pytest.org/en/latest/fixture.html
