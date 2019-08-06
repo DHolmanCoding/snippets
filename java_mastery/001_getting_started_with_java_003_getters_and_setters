@@ -1,0 +1,36 @@
+# Hello world and welcome to Java
+# The file containing this class must be HelloWorld
+public class HelloWorld {
+     public static void main(String[] args) {
+        System.out.println("Hello, World!");
+     }
+}
+
+public - the method can be called from anywhere, even outside the program
+static - can be run at the class level without making an object
+void - returns no value
+
+String[] args is a vector of command line arguments
+
+# javac HelloWorld.java  # compiles to bytecode
+# java HelloWorld        # runs a java application
+
+Getters and Setters:
+Setters and getters allow an object to contain private variables which can
+be accessed or changed with restriction.
+
+public class CountHolder {
+    private int count = 0;
+
+    public synchronized int getCount() { return count; }  # synchronized adds thread safety
+    public synchronized void setCount(int c) { count = c; }
+
+}
+
+Reference Data Types:
+Instantiating a reference type:
+Object obj = new Object(); // Note the 'new' keyword
+<reference type> <variable> = new <Constructor>
+
+primitives just store value like conventional variables:
+int i = 10;
