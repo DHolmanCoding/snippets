@@ -1,0 +1,30 @@
+Compilation:
+$ javac HelloWorld.java  # produces HelloWorld.class
+$ java HellWorld
+
+Using packages is a common way to organize the namespace for classes:
+# At the header of the HelloWorld class, include 'package com.example;'
+. # the current directory (for this example)
+|
+----com
+     |
+     ----example
+     |
+      ----HelloWorld.java
+      ----HelloWorld.class
+
+javac @sorucefiles
+
+Creating documentation with javadocs:
+$ javadocs JavaFile.java
+
+/**
+ * Documentation
+ *
+ * @param
+ *
+ */
+
+// inline comment
+//TODO
+//FIXME
