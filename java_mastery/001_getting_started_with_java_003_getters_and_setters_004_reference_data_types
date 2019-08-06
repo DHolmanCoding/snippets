@@ -34,3 +34,9 @@ Object obj = new Object(); // Note the 'new' keyword
 
 primitives just store value like conventional variables:
 int i = 10;
+
+A java entry-point class has the following main method:
+public static void main(String[] args)
+
+Classes for an application may be packaged together into a JAR file, or
+for smaller applications they can be run via the main class.

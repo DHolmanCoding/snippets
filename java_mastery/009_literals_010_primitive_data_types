@@ -1,0 +1,41 @@
+A literal is any “constant” value that can be used
+in an assignment or other expression.
+
+Primitive number literals:
+# the underscores in primitive number literals are ignored and used
+# for human readability.
+byte color = 1_2_3;
+short yearsAnnoDomini= 2_016;
+int socialSecurtyNumber = 999_99_9999;
+long creditCardNumber = 1234_5678_9012_3456L;
+float piFourDecimals = 3.14_15F;
+double piTenDecimals = 3.14_15_92_65_35;
+
+Boolean literals:
+boolean flag = true; // using the 'true' literal
+flag = false; // using the 'false' literal
+
+String literals:
+"This is a string literal"
+
+"This is a " +
+"multi-line " +
+"string ltieral."
+
+The null literal:
+MyClass object = null;
+
+Char literals:
+MyClass object = null;
+
+Float literals:
+0.0 // this denotes zero
+.0 // this also denotes zero
+0. // this also denotes zero
+3.14159 // this denotes Pi, accurate to (approximately!) 5 decimal places.
+1.0F // a `float` literal
+# double precision flots = doubles
+1.0D // a `double` literal. (`double` is the default if no suffix is given)
+
+The 8 primitive data types byte, short, int, long, char, boolean, float,
+and double are the types that store most raw numerical data in Java programs.
