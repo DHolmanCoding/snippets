@@ -1,0 +1,17 @@
+Most basic source code file, named hello.c
+
+#include <stdio.h>
+
+int main(void)
+{
+    puts("Hello, World");
+    return 0;
+}
+
+gcc hello.c -o hello
+
+Operator precedence:
+1. [] and () left to right associativity
+2. * right to left associativity
+
+
