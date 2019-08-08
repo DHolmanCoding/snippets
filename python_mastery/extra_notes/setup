@@ -1,0 +1,32 @@
+module: *.py file
+package: __init__
+
+python setup.py develop
+python setup.py install
+
+Should work just fine within a virtual environment as 'python' will direct
+things into the proper (global vs venv package directory)
+
+from setuptools import setup
+
+
+project_dir
+|
+|-- package_dir
+|-- setup.py
+
+setup(
+    name='my_code',
+    py_modules=['nice'],
+    scripts=['script_1', 'script_2']  # this is relative to the setup.py
+    install_requires=['Click', pandas],
+    package_data=[],  # Package data
+    data_files=[]  # Addiitonal files, these will go into your site packages directory
+)
+
+python setup.py register
+python setup.py upload
+
+python setup.py :: Rust cargo.toml
+
+setup.cfg
