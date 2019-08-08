@@ -6,4 +6,7 @@ A C-string is the convention to have a one-dimensional array of characters
 which is terminated by a null-character, by a '\0'.
 #include <string.h>
 
+char * string = "hello world";  // This implements a char pointer to the first
+                                // element of the string char array.
 
+const means that data is read only (this is what makes strings immutable)
