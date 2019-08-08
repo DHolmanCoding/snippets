@@ -56,6 +56,7 @@ Bitwise Operators
 
 if (condition_a && condition_b):
 
+Note: Pointers are better named address variables as they point to a address of other variables
 Note: an lvalue is an object with a memory location
 -> is shorthand for (*x).y which is a dereference of x and a reference
 & is the unary "address of" operator which evaluates into a pointer to the objects type and location
