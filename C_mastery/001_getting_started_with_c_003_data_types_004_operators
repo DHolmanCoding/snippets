@@ -31,3 +31,44 @@ char* str = "hello, world"; /* string literal */
 char a1[] = "abc"; /* a1 is char[4] holding {'a','b','c','\0'} */
 char a2[4] = "abc"; /* same as a1 */
 char a3[3] = "abc"; /* a1 is char[3] holding {'a','b','c'}, missing the '\0' */
+
+Relational Operators:
+Equals "==" will check if the operands have the same memory locations
+Not Equals "!="
+Not/Negation "!" checks whether some value is equal to 0 (same as '== 0')
+
+Conditional/Ternary Operators:
+condition ? value_if_true : value_if_false;
+a = b ? c : d;
+is equivalent to
+if (b)
+   a = c;
+else
+   a = d;
+
+Bitwise Operators
+& bitwise AND
+| bitwise inclusive OR
+^ bitwise exclusive OR (XOR)
+~ bitwise not (one's complement)
+<< logical left shift
+>> logical right shift
+
+if (condition_a && condition_b):
+
+Note: an lvalue is an object with a memory location
+-> is shorthand for (*x).y which is a dereference of x and a reference
+& is the unary "address of" operator which evaluates into a pointer to the objects type and location
+* is the dereference operator and evaluates to the object in
+  the memory location of the evaluated expression on the RHS.
+a[i] is indexing which is equivalent to *(a+i) which takes i steps in memory location and returns the object
+
+Increment operators:
+tmp = ++a; /* increments a by one, and returns new value; a == 2, tmp == 2 */
+tmp = a++; /* increments a by one, but returns old value; a == 3, tmp == 2 */
+tmp = --b; /* decrements b by one, and returns new value; b == 0, tmp == 0 */
+tmp = b--; /* decrements b by one, but returns old value; b == -1, tmp == 0 */
+
+Assignment operators:
+Assigns the value of the right-hand operand to the storage location named
+by the left-hand operand, and returns the value.
