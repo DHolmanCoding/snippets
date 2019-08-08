@@ -1,0 +1,9 @@
+#include <stdbool.h> allows you to use booleans as a data type (true/false)
+true is 1 and false is 0 as booleans are really subsets of the integers with
+special properties
+
+A C-string is the convention to have a one-dimensional array of characters
+which is terminated by a null-character, by a '\0'.
+#include <string.h>
+
+
