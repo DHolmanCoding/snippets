@@ -1,0 +1,33 @@
+Most basic source code file, named hello.c
+
+#include <stdio.h>
+
+int main(void)
+{
+    puts("Hello, World");
+    return 0;
+}
+
+gcc hello.c -o hello
+
+Operator precedence:
+1. [] and () left to right associativity
+2. * right to left associativity
+
+Integer types and constants:
+signed char c = 127; /* required to be 1 byte, see remarks for further information. */
+signed short int si = 32767; /* required to be at least 16 bits. */
+signed int i = 32767; /* required to be at least 16 bits */
+signed long int li = 2147483647; /* required to be at least 32 bits. */
+
+Floating point constants:
+float f = 0.314f; /* suffix f or F denotes type float */
+double d = 0.314; /* no suffix denotes double */
+long double ld = 0.314l; /* suffix l or L denotes long double */
+
+String literals:
+char* str = "hello, world"; /* string literal */
+/* string literals can be used to initialize arrays */
+char a1[] = "abc"; /* a1 is char[4] holding {'a','b','c','\0'} */
+char a2[4] = "abc"; /* same as a1 */
+char a3[3] = "abc"; /* a1 is char[3] holding {'a','b','c'}, missing the '\0' */
