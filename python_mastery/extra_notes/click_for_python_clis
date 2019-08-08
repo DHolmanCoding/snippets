@@ -1,0 +1,23 @@
+why cli?
+- they are great for things that have to be run on a schedule
+- they are good for making modular unit of code (UNIX style)
+- they are good as management interfaces for larger applications (e.g. Django manage.py)
+
+https://click.palletsproject.com/why/
+
+arguments are core inputs into a program
+options can be have a flag and corresponding value, or be just flags
+Options,arguments and parameters:
+https://stackoverflow.com/questions/36495669/difference-between-terms-option-argument-and-parameter
+
+Out CLI application read from stdin and write to stdout so pipes will work!
+
+Applicatons should exit with a meaningful status code (0=success, non-zero=failure)
+
+@click.command()
+@click.option()
+def hello_world()
+    pass
+
+if __name__ == '__main__':  # main is the entrypoint of the application.
+    hello_world()           # So, if the module is being run directly this will execute.
