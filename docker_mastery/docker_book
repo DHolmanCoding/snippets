@@ -49,6 +49,8 @@ docker ps -a will show us all running containers
 using 'exit' will stop the container from running.
 sudo docker start <container_id or container_name>
 sudo docker attach <> to get back to the bash command prompt
+sudo docker stop to terminate our daemonized container
+sudo docker rm <container_name> to ultimately delete a container
 
 docker run --name will allow us to give a descriptive name
 docker run -d will allow us to run the container in detached mode in the background
@@ -56,6 +58,29 @@ without an interactive terminal shell (daemonized container)
 
 'docker logs --tail n <container_name>' to see the last n container logs when debugging
 'sudo docker top' will allow you to investigate the processes running inside your container
+'sudo docker stats' will allow you to look at basic CPU/memory usage data
 
+'sudo docker exec <flags> <linux command>' will allow us to run processes inside
+an existing container.
 
+docker run --restart will restart the container if it fails
+ex) --restart=on-failure:5
 
+A docker image is made up of filesystems layered on top of eachother.
+At the base is a bootfs which resembles a typical linux/unix book filesystem.
+Next, a rootfs is layered on top of the boot filesystem (this stays in read-only mode)
+Then, docker uses 'union mount' (which is like pooling the contents of multiple directories)
+in order to mount more layers of systems onto the stack. These filesystems are called images
+
+image -> parent_image -> ... -> rootfs -> base_image (bootfs)
+
+Upon launching container from an image:
+read/write filesystem -> image -> parent_image -> ... -> base_image
+
+When a docker container first starts the initial read/write layer on the top is
+empty, but as changes occur, files are copied from the lower read-only layers.
+
+So, in summary, a container is a read/write layer, knowledge of layers below it, and some
+configuration data.
+
+'sudo docker images' will list out all your images
