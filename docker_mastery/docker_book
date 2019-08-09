@@ -1,0 +1,26 @@
+Containers run in the space on top of an operating system's kernel.
+Virtual machines run on a system's physical hardware through a intermediate layer.
+
+examples: github.com/turnbullpress/dockerbook-code
+
+containers use the operating system's normal system call interface
+
+Docker is 'copy-on-write'
+
+Parts fo the Docker CE:
+- The docker engine (client and server(a.k.a daemon))
+Allows you to interact with the cli binary, docker, and the
+RESTful API to interact w3ith the daemon
+- Docker images
+These can be thought of as source code (building and packing
+- Registries
+Docker Hub
+- Docker containers
+Containers are the running/execution aspect of docker
+Containers are:
+1. An image format
+2. A set of standard operations
+3. An execution environment
+
+Docker compose: allows you to run stacks of containers to represent application stacks
+Docker swarm: allows you to create clusters of containers called swarms
