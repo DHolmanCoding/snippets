@@ -24,3 +24,38 @@ Containers are:
 
 Docker compose: allows you to run stacks of containers to represent application stacks
 Docker swarm: allows you to create clusters of containers called swarms
+Kubernotes is an orchestration tools that uses docker as an underlying compute layer
+
+Docker technical components:
+1. Native linux container format that docker calls libcontainer
+2. Linux kernel namespaces which provide isolation for filesystems, processes and networks
+    - each file system has its own root filesystem, its own process environment, and virtual
+      interfaces with IP addressing between containers.
+3. Resource isolation and grouping are done using cgoups
+4. copy-on-write filesystems
+5. Logging of stdout, stderr and stdin
+6. Interactive shell (you can create a pseudo-tty and attach to stdin)
+
+sudo docker run -i -t ubuntu /bin/bash
+-i keeps STDIN of the container open from the container
+-t tells docker to assign pseudo tty to the container that is to be created.
+-it together this will give us an interactive shell
+
+hostname -I to check the IP address of the container that you are in
+apt-get update; apt-get install vim
+
+docker ps -a will show us all running containers
+
+using 'exit' will stop the container from running.
+sudo docker start <container_id or container_name>
+sudo docker attach <> to get back to the bash command prompt
+
+docker run --name will allow us to give a descriptive name
+docker run -d will allow us to run the container in detached mode in the background
+without an interactive terminal shell (daemonized container)
+
+'docker logs --tail n <container_name>' to see the last n container logs when debugging
+'sudo docker top' will allow you to investigate the processes running inside your container
+
+
+
