@@ -120,4 +120,10 @@ the docker run command will b appended to the end of the entry point upon launch
 ENTRYPOINT can be used in conjunction with CMD for creative use a default and
 overridable flags attached to a mandatory command.
 
+VOLUMES circumvent the standard union file system, and can add additional useful
+functionality.
 
+ADD <location on host relative to build context> <location in image>
+
+ONBUILD is a command that can execute if the image is used as the basis of
+another image.
