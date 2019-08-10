@@ -84,3 +84,40 @@ So, in summary, a container is a read/write layer, knowledge of layers below it,
 configuration data.
 
 'sudo docker images' will list out all your images
+
+The directory that contains your Dockerfile is called your build environment. When
+Docker build is run, the directory and its contents get based to the Docker daemon
+which has direct access to all the contents -- code, data and all.
+
+Each instruction in a Dockerfile adds a layer to the image and then commits the image.
+
+FROM is your base image layer
+RUN executes commands in the current image
+
+docker build -t <name:0.0.0> <directory OR github repo with the Dockerfile of choice>
+
+.dockerignore works like .gitignore
+
+Running in <container>
+<image>
+
+Docker treats previous layers of an image as a cache
+
+ENV sets an environmental variable
+CMD specifies the command to be run whe na container is launched. It is similar to RUN, but
+instead of running the command while the container is being built, it will run the command as
+soon as the container is launched.
+So,
+sudo docker run -it <image> <command (such as /bin/bash)>
+OR
+CMD ["/bin/bash"]
+do the same thing. Note that CMD requires an array of string arguments.
+Note: the docker run command will override the docker CMD command.
+
+ENTRYPOINT is like CMD, but cannot be overridden. For this command, anything passed into
+the docker run command will b appended to the end of the entry point upon launch.
+
+ENTRYPOINT can be used in conjunction with CMD for creative use a default and
+overridable flags attached to a mandatory command.
+
+
