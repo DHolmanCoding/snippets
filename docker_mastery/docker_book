@@ -127,3 +127,7 @@ ADD <location on host relative to build context> <location in image>
 
 ONBUILD is a command that can execute if the image is used as the basis of
 another image.
+
+Volumes:
+The -v <directory on local host>:<directory in container> allows us to mount volumes into
+the docker container.
