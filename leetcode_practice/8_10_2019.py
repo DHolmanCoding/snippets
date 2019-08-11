@@ -1,3 +1,5 @@
+from typing import Dict, List
+
 # 136. Single number
 
 # Independent solution with one SO lookup
