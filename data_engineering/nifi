@@ -1,7 +1,13 @@
+Apache nifi (overview): https://nifi.apache.org/docs/nifi-docs/html/overview.html
 Apache nifi: https://nifi.apache.org/docs/nifi-docs/html/getting-started.html
 Apache nifi user guide (more detailed): https://nifi.apache.org/docs/nifi-docs/html/user-guide.html
 Apache refistry: https://nifi.apache.org/docs/nifi-registry-docs/html/getting-started.html
 
-
-
-
+Dataflow from one part of a system to another part of a system is hard to handle because:
+Systems fail
+Data access exceeds capacity to consume
+Boundary conditions are mere suggestions
+What is noise one day becomes signal the next
+Systems evolve at different rates
+Compliance and security
+Continuous improvement occurs in production
