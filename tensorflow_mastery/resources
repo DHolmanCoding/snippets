@@ -1,1 +1,4 @@
 https://medium.com/tensorflow/testing-for-tensorflow-2-0-2db0d17c37f0
+
+Eager execution will effectively interpret TF code line by line instead of
+putting together an abstract syntax tree (graph) at runtime.
