@@ -79,3 +79,13 @@ it flattens near the extremes leading to very slow training.
 
 relu makes your models train much faster
 
+Convolution has kernels that are learned.
+Photoshop has kernels that are hand designed, but same concept.
+CNNs are very parameter efficient compared to dense layers
+
+Another great image for CNNs on 1:00:22
+
+Max pooling reduces length x width but keeps depth the same (this makes things faster, but is lossy)
+
+Deep Dream is a way to investigate the representations learned by a neural network by
+finding out what each layer maximally responds to.
