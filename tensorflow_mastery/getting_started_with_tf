@@ -89,3 +89,8 @@ Max pooling reduces length x width but keeps depth the same (this makes things f
 
 Deep Dream is a way to investigate the representations learned by a neural network by
 finding out what each layer maximally responds to.
+
+GANs:
+DCGAN (trick the descriminator)
+--> pix2pix (trick the descriminator and minimize L1 between input and output image)
+--> cycleGAN (exploit set-level supervision)
