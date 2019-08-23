@@ -4,6 +4,7 @@ Flattens an n-tensor into a 1-tensor
 
 more layers == more layers of features
 softmax means give me a probability distribution based on the input data
+cross entropy compares two probability distributions
 
 pip install tensorflow-gpu==2.0.0-beta1
 import tensorflow as tf
@@ -44,9 +45,37 @@ Keras offers a few APIs
 
 All models can be fit by
 1. model.fit
-2. with tf.GradientTape() as tape:
-       pass
+2.
+with tf.GradientTape() as tape:
+    pass
+grads = tape.gradient(loss_value, model.trainable_variables)
+
 here, all computations in the with block are recorded on a graph (tape) and then run backwards
 to get the gradients
 
+Note: Rachel/Josh optimizer
+
+When you call the data, you send it through the forward pass.
+Next, you take a loss function (error) as a function of your other variables
+which allows you to quantify how good or bad the parameters are. Deep networks
+are not convex, but we can hope to find some sort of a minima. In calculus, the
+gradient is the direction of maximal increase
+
+Numeric gradients: make the variable slightly bigger, recompute your loss
+                   make the variable slightly smaller, recompute your loss
+                   determine which way made your loss go down.
+                   unfortunately this requires two forward passes through your data
+Analytic gradients: if you are smart with calculus theorems, you can do it in a way
+                    that is linear with the time of nodes in the computational graph
+
+batch size: smaller batches take less time (SGD)
+            larger batches take more time but are more accurate updates (batch)
+            in practice: mini-batch
+
+great image at 46:52 that is slowly built up to
+
+sigmoid forces a number to [0, 1] but has nasty properties with gradient descent since
+it flattens near the extremes leading to very slow training.
+
+relu makes your models train much faster
 
