@@ -13,5 +13,15 @@ Axis of black box techniques:
 - bayesian vs frequentist
 - independent vs correlated
 
-Q1: what is my model?
+Q1: what is my model for latent function, f?
 Q2: what is my exploration strategy?
+
+"use a gaussian process" ==> too glib, but they give a general mechanism
+for modelling continuous functions
+
+We want a model M that can make predictions and maintain a measure of uncertainty of
+those predictions.
+types: Universal, thompson (easy to implement), PI (probability of improvement),
+EI (Expected improvement), UCB (upper confidence bound algos), (P)ES (predictive
+entropy search methods)
+
