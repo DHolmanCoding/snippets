@@ -7,7 +7,10 @@ Downsides:
     - sequential computation
     - no explicit modeling of long/short range dependencies
     - no modeling of hierarchy
-    - RRNs w/ sequence aligned states seem wasteful
+    - RNNs w/ sequence aligned states seem wasteful
+
+RNNs consume a sequential input, and at every "timestep" produce a continuous representation
+that is a summarizaiton of everything they have consumed up to this point.
 
 CNN
 - Trivial to paralellize
@@ -33,3 +36,10 @@ self attn: O(len * len * dim)
 RNN: O(len * dim * dim)
 CNN: O(len * dim * dim * kernel width)
 
+Attention is like re-expressing each word as a linear combination of
+comparisons between the word in question and all other words.
+
+Context/background:
+1. classification and regression using self-attention
+2. self-attention with RNNs
+3. Recurrent attention
