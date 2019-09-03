@@ -24,6 +24,8 @@ Self-attention
 - trivial to parallelize
 
 attention is position invariant, so position representation must be injected
+Attention computes content-based similarity.
+
 
 at a specific position, you can re-express the word at that position as a convex
 combination of all the positions
@@ -43,3 +45,10 @@ Context/background:
 1. classification and regression using self-attention
 2. self-attention with RNNs
 3. Recurrent attention
+
+Computationally, the encoder amounts to two matmuls and a softmax.
+
+Texture synthesis by non parametric sampling -- a paper that is an early example of self-similarity.
+this is effectively a differentiable way of doing Non-local means
+
+
