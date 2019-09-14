@@ -1,0 +1,12 @@
+<expr> ::= <constant>  # numbers like 0/1 or predefined functions like +/*
+        |  <variable>  # names like x, y
+        |  (<expr><expr>)  # function application (f x)
+        |  (lambda <variable>.<expr>)  # defining new functions
+
+Function application
+(lambda x. + 1) 2
+(lambda x. + 1) 2 => (+ 1 2) => 3
+x is said to be bound by the lambda
+
+pointers to array of pointers:
+char* argv[] is the same as char** argv
