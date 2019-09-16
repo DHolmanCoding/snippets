@@ -1,0 +1,44 @@
+http://learnyouahaskell.com/chapters
+
+ghc is the compiler
+ghci allows you to enter interactive mode
+in interactive mode you can load in your functions by doing :l myfunctions if there
+is a file called myfunctions.hs in the same folder ghci was invoked.
+
+:set prompt "ghci> "
+:quit when you're done
+
+' denotes a function that is a strict version of a function (not lazy)
+
+Lists: homogenous data type
+let list = [1,2,3,4,5,6]
+
+++ is used for concatenating lists and strings
+5:[1,2,3,4,5] will add 5 to the list
+!! will get you the one based index of a list
+
+4 `elem` [1,2,3,4]
+
+List comprehension
+[x*2 | x <- [1..10]]
+[if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x]
+[<statement> | <set to draw from> <predicate(s)>]
+
+/= means not equals... WTF?
+
+Tuples: can have homogenous types, but are of fixed length and unique type
+
+:t will give you the type of an expression
+
+:: means "has type of"
+
+function declaration on the ghci:
+let removeNonUppercase :: [Char] -> [Char]; removeNonUppercase st = [ c | c <- st, c `elem` ['A'..'Z']]
+
+Common types
+Int (bounded)
+Integer (unbounded, very big)
+Float
+Douglas
+Bool
+Char
