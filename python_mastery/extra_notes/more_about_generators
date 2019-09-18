@@ -1,5 +1,4 @@
-Behind the scenes of an iterable
-
+Behind the scenes of an iterable:
 for x in xs:
     print(x)
 
