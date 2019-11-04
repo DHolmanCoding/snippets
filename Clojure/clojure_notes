@@ -3,4 +3,3 @@ Clojure is dynamically typed and functional
 Clojure is a Lisp dialect that include macros: a function that
 takes source code as input and returns source code as output. This
 is used to replace boilerplate code.
-
