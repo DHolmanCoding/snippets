@@ -1,0 +1,15 @@
+Behind the scenes of an iterable:
+for x in xs:
+    print(x)
+
+xi = iter(xs)
+while True:
+    try:
+        x = next(xi)
+    except StopIteration:
+        break
+
+customizing computational time and resources to what is need and when
+
+lazy vs eager
+pipeline mechanism

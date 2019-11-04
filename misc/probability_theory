@@ -1,0 +1,42 @@
+Insightful passages and notes from Probability Theory by Jaynes.
+
+Our theme is simply:
+probability theory as extended logic. The ‘new’ perception amounts to the recognition that
+the mathematical rules of probability theory are not merely rules for calculating frequencies
+of ‘random variables’; they are also the unique consistent rules for conducting inference
+(i.e. plausible reasoning) of any kind, and we shall apply them in full generality to that end.
+
+Before Bayesian methods can be used, a problem must be developed beyond the
+‘exploratory phase’ to the point where it has enough structure to determine all the needed
+apparatus (a model, sample space, hypothesis space, prior probabilities, sampling distribution).
+
+Indeed, some of them never evolve out of the exploratory phase.
+Problems at this level call for more primitive means of assigning probabilities directly out
+of our incomplete information.
+For this purpose, the Principle of maximum entropy has at present the clearest theoretical
+justification and is the most highly developed computationally, with an analytical apparatus
+as powerful and versatile as the Bayesian one. To apply it we must define a sample space, but
+do not need any model or sampling distribution. In effect, entropy maximization creates a model
+for us out of our data, which proves to be optimal by so many different criteria that it is hard
+to imagine circumstances where one would not want to use it in a problem where we have a sample
+space but no model.
+
+Usually, such hypotheses extend beyond what is directly observable in the data, and in that sense
+we might say that Bayesian methods are – or at least may be – speculative. If the extra hypotheses
+are true, then we expect that the Bayesian results will improve on maximum entropy; if they are
+false, the Bayesian inferences will likely be worse.
+
+to make progress in a new area, it is necessary to develop a healthy disrespect for tradition and
+authority, which have retarded progress throughout the 20th century.
+
+All discussions of these questions start by giving examples of the contrast between
+deductive reasoning and plausible reasoning. As is generally credited to the Organon of
+Aristotle (fourth century bc) deductive reasoning (apodeixis) can be analyzed ultimately
+into the repeated application of two strong syllogisms.
+
+This is the kind of reasoning we would like to use all the time; but, as noted, in almost all
+the situations confronting us we do not have the right kind of information to allow this kind
+of reasoning. We fall back on weaker syllogisms (epagoge).
+
+Is it possible to develop a consistent ‘one-dimensional’ model of plausible reasoning?
+LOL I don't think so, but who knows.
