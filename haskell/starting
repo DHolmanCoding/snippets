@@ -39,9 +39,18 @@ function declaration on the ghci:
 let removeNonUppercase :: [Char] -> [Char]; removeNonUppercase st = [ c | c <- st, c `elem` ['A'..'Z']]
 
 Common types
-Int (bounded)
+Int (bounded) -- to check the maximum size, type maxInt = maxBound :: Int
 Integer (unbounded, very big)
 Float
-Douglas
+Double
 Bool
-Char
+Char -- single quotes
+Tuple -- generally hold two values
+
+Comments
+single line --
+multi line {- <comment> -}
+
+Modules
+import Data.List
+import System.IO
