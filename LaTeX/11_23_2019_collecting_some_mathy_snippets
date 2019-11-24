@@ -1,0 +1,111 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+%% dependencies
+\usepackage{hyperref} % Links
+\usepackage{mfirstuc} % Capitalizing first letter of words
+\usepackage{amsmath,amsthm,amssymb} % For math
+
+%% shortcuts
+\newcommand{\half}{\frac{1}{2}} % just {do shortcut}{longcut}
+\newcommand{\cbrt}[1]{\sqrt[3]{#1}}
+
+%% Setting up your headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{An Example LaTeX Document} % Left Header
+\rhead{\thepage} % Right Header
+\cfoot{Hello this is a footer} % Center Foot (empty)
+
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=blue,
+    linktoc=all,
+}
+
+\begin{document}
+
+\title{\capitalisewords{
+Practicing Mathematics Boilerplate}}
+\author{Douglas Holman}
+\date{\today}
+\maketitle
+
+\begin{abstract}
+This is an example of a \LaTeX\ document,
+	complete with theorems and headers and the like.
+\end{abstract}
+
+% This line makes a ToC
+\tableofcontents
+
+% This line starts a new page
+\eject
+
+\textbf{Golden Rule}: Here we are using bold font
+\bigskip % Basically works like a line spacer
+
+If you have any question about LaTeX, it is generalyl best to go ahead and \href{www.google.com}{Google it}.In any event, let's move on to the real meat of the document
+
+
+
+\section{Start}
+This is the first, but it certainly is not the last (see Section \ref{sec:the end})
+
+You can also \textbf{bold} or \textit{italicize} text.
+
+
+
+\section{Math}
+Inline math is created with dollar signs,
+like $e^{i \pi} = -1$ or $\half \cdot 2 = 1$.
+
+Display math is created as follows:
+\[ \sum_{k=1}^n k^3 = \left( \sum_{k=1}^n k \right)^2. \]
+This puts the math on a new line. Remember to properly add punctuation to the end of your sentences -- display math is considered part of the sentence too!
+
+Note that the use of \verb \left(  causes the parentheses to be the correct size. Without them, get something ugly like
+\[ \sum_{k=1}^n k^3 = ( \sum_{k=1}^n k )^2. \]
+
+
+
+\section{Finish}
+\label{sec:the end}
+\subsection{Subheaders}
+
+In the begining we wrote
+\begin{verbatim}
+\newcommand{\half}{\frac{1}{2}} % just {do shortcut}{longcut}
+\newcommand{\cbrt}[1]{\sqrt[3]{#1}}
+\end{verbatim}
+
+Now we can use these shortcuts.
+\[ \half + \half = 1 \text{ and } \cbrt{8} = 2. \]
+
+\section{Numbered and Bulleted Lists}
+Here is a numbered list.
+\begin{enumerate}
+	\item The environment name is ``enumerate''.
+	\item You can nest enumerates.
+		\begin{enumerate}
+			\item Subitem
+			\item Another subitem
+		\end{enumerate}
+	\item[$2 \half$.] You can also customize any particular label.
+	\item But the labels continue onwards afterwards.
+\end{enumerate}
+
+\bigskip
+
+You can also create a bulleted list.
+\begin{itemize}
+	\item The syntax is the same as ``enumerate''.
+	\item However, we use ``itemize'' instead.
+\end{itemize}
+
+
+\end{document}
