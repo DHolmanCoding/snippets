@@ -6,3 +6,6 @@ Summary:
 3. check require PR reviews before merging
 4. check dismiss stale PR approvals
 5. check applied to admins
+
+Geting your feet wet with pre commit hooks:
+https://pre-commit.com/
