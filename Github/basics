@@ -1,0 +1,8 @@
+__Requiring approval for PRs by protecting branches__
+https://help.github.com/en/github/administering-a-repository/enabling-required-reviews-for-pull-requests
+Summary:
+1. Go to repo settings
+2. Select protect branch (usually for master)
+3. check require PR reviews before merging
+4. check dismiss stale PR approvals
+5. check applied to admins
