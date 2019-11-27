@@ -128,3 +128,31 @@ HAVING COUNT(*) > 3 -- equals to HAVING NumberOfAuthors > 3
 ;
 ```
 
+<TODO: Skipping some core commands to move onto joins -- I will be back!>
+<TODO: ORDER BY>
+<TODO: CASE>
+<TODO: WHERE and HAVING>
+
+XXXX JOIN
+join types: INNER/OUTER/CROSS and LEFT/RIGHT/FULL
+join criteria: how table rows relate
+
+```Self joining to produce new internal relationships (This example maps employee to manager)
+SELECT
+ e.FName AS "Employee",
+ m.FName AS "Manager"
+FROM
+ Employees e
+JOIN
+ Employees m
+ ON e.ManagerId = m.Id
+``` A cartesian product is created and then filtered for the JOIN criteria then SELECT is applied
+
+Different join types in SQL specify whether non-matching/matching rows are included in the result
+
+CROSS JOIN: Every row of first table joins will all rows of the second table (x * y rows result)
+INNER JOIN: Includes rows in common
+LEFT OUTER JOIN: All rows in A and any common rows in B
+RIGHT OUTER JOIN: All rows in B and any common rows in A
+FULL OUTER JOIN: All rows in both A and B
+JOIN visual: https://gyazo.com/f0a3e5a2c9b032c05ba729b03c7649a4
