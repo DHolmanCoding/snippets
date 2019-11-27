@@ -1,0 +1,82 @@
+0001 getting started
+SQL is comprised of three main sub-languages:
+1. DDL (create and modify database structure)
+2. DML (Perform CRUD operations)
+   - Insert, select, update, delete (and merge)
+3. DCL (control dta stored in database)
+
+0002 identifiers (rules for naming tables, columns, and other db objects)
+allowed chars: {a-z, 0-9, _} (must start with letter)
+
+0003 data types
+1. DECIMAL/NUMERIC (how-many-places, places-after-decimal
+2. FLOAT(more precision)/REAL
+3. {tinyint: [0, 255], smallint: [-2^15, 2^14], int: [-2^31, 2^30], bigint: [-2^63, 2^62]}
+4. MONEY/SMALLMONEY
+5. BINARY/VARBINARY(variable length binary, max 8000 bytes)
+6. CHAR/VARCHAR
+7. NCHAR/NVARCHAR (unicode)
+8. UNIQUEIDENTIFIER (16 bytes UUID)
+
+0004 NULL
+by default all columns are nullable, unless we set it to be otherwise
+```
+CREATE TABLE MyTable
+(
+ MyCol1 INT NOT NULL, -- non-nullable
+ MyCol2 INT NULL -- nullable
+) ;
+```
+
+0005 SELECT
+Aliasing:
+```
+SELECT
+    FName AS "First Name",
+    MName AS "Middle Name",
+    LName AS "Last Name"
+FROM Employees
+```
+
+Selecting specified number of records:
+```
+SELECT Id, ProductName, UnitPrice, Package
+FROM Product
+ORDER BY UnitPrice DESC
+OFFSET 5 ROWS            -- Additional skipping of 5 rows
+FETCH FIRST 10 ROWS ONLY -- then take the next 10
+```
+
+Selecting with condition:
+```
+SELECT column1, column2, columnN
+FROM table_name
+WHERE [condition]
+```
+
+Selecting with case (applying logic on the fly):
+```
+SELECT
+    CASE WHEN Col1 < 50 THEN 'under'
+        ELSE
+            CASE WHEN Col1 > 50 AND Col1 <100 THEN Col1
+            ELSE 'over' END
+    END threshold
+FROM TableName
+```
+
+Selection with table alias:
+```
+SELECT e.Fname, e.LName, m.Fname AS ManagerFirstName
+FROM Employees e
+    JOIN Managers m ON e.ManagerId = m.Id
+```
+
+Selecting with multiple conditions:
+```
+SELECT name
+FROM persons
+WHERE (gender = 'M' AND age < 20)
+   OR (gender = 'F' AND age > 20);
+```
+
