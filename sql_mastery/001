@@ -80,3 +80,51 @@ WHERE (gender = 'M' AND age < 20)
    OR (gender = 'F' AND age > 20);
 ```
 
+Selection with aggregate functions will work with:
+AVG   -- average of values selected
+MIN   -- returns minimum of values selected
+MAX   -- returns max of values selected
+Count -- count of rows that meet all conditions
+SUM   -- sum of values selected for all rows
+
+Select with condition of multiple values
+```
+SELECT * FROM Cars WHERE status IN ( 'Waiting', 'Working' )
+```
+
+Get aggregated result for groups of row groups:
+``` Number of items in each category
+SELECT category, COUNT(*) AS item_count
+FROM item
+GROUP BY category;
+```
+NOTE: select only categories that are in the GROUPBY
+
+WHERE -- filters out records BEFORE any grouping is done
+HAVING -- filters out records AFTER any grouping is done
+ORDER BY -- (A to Z) (0, 1, 2) (ascending by default)
+
+Selecting distinct values only
+```
+SELECT DISTINCT ContinentCode
+FROM Countries;
+```
+
+0006 GROUP BY
+All results with the same value in the grouped column are aggregated together
+Can be thought of as 'for each'
+
+``` Return all books with 3+ authors
+SELECT
+ b.Id,
+ b.Title,
+ COUNT(*) NumberOfAuthors
+FROM BooksAuthors ba
+ INNER JOIN Books b ON b.id = ba.bookid
+GROUP BY
+ b.Id,
+ b.Title
+HAVING COUNT(*) > 3 -- equals to HAVING NumberOfAuthors > 3
+;
+```
+
