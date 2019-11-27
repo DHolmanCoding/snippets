@@ -45,7 +45,7 @@ FROM Product
 ORDER BY UnitPrice DESC
 OFFSET 5 ROWS            -- Additional skipping of 5 rows
 FETCH FIRST 10 ROWS ONLY -- then take the next 10
-```
+``` I think LIMIT 1 OFFSET 1 also works
 
 Selecting with condition:
 ```
