@@ -25,3 +25,16 @@ Getting branched commits into master:
 	git checkout -b <branch-name>
 	git checkout master
 	git merge <branch-name>
+
+# Undoing commits
+git reset --soft HEAD~N Where N is the number of commit messages to go back from (usually one more than you would intuitively think)
+
+ex):
+A
+B
+C
+To get from A to C you need N = 3
+
+or
+git reset --soft <SHA HASH>
+
